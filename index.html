@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="BloomCart - Fresh flowers delivered with love">
+    <title>BloomCart - Fresh Flowers Delivered</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">🌿 BloomCart</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="builder.html">Build Bouquet</a>
+                <a href="account.html">My Account</a>
+            </div>
+            
+            <div class="nav-icons">
+                <button class="icon-btn" id="searchBtn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button class="icon-btn cart-icon" id="cartBtn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <a href="login.html" class="icon-btn" id="userBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Fresh Flowers <br>Delivered With Love</h1>
+            <p class="hero-subtitle">Same-day delivery available. Order by 2 PM for fresh blooms today.</p>
+            <div class="hero-buttons">
+                <a href="shop.html" class="btn btn-primary btn-large">Shop Now →</a>
+                <a href="builder.html" class="btn btn-outline btn-large">Build Your Own</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&h=600&fit=crop" alt="Beautiful flower arrangement">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Free Delivery</h3>
+                    <p>On orders over $50</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💐</div>
+                    <h3>Fresh Guarantee</h3>
+                    <p>7-day freshness promise</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Gift Ready</h3>
+                    <p>Free personalized card</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>4.9 Star Rating</h3>
+                    <p>From 10k+ customers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Occasion</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="Birthday">
+                    <img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=300&h=300&fit=crop" alt="Birthday flowers">
+                    <h3>Birthday</h3>
+                </div>
+                <div class="category-card" data-category="Anniversary">
+                    <img src="https://images.unsplash.com/photo-1587301563926-b5c5d7a75f2b?w=300&h=300&fit=crop" alt="Anniversary flowers">
+                    <h3>Anniversary</h3>
+                </div>
+                <div class="category-card" data-category="Sympathy">
+                    <img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=300&h=300&fit=crop" alt="Sympathy flowers">
+                    <h3>Sympathy</h3>
+                </div>
+                <div class="category-card" data-category="Wedding">
+                    <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=300&h=300&fit=crop" alt="Wedding flowers">
+                    <h3>Wedding</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Arrangements</h2>
+            <div class="products-grid" id="featuredProductsGrid">
+                <!-- Products will be loaded by JavaScript -->
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Get 15% Off Your First Order</h2>
+                <p>Subscribe to receive flower care tips, special offers, and seasonal inspiration.</p>
+                <form id="newsletterForm" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>🌿 BloomCart</h3>
+                    <p>Bringing nature's beauty to your doorstep since 2024.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="shop.html">Shop</a>
+                    <a href="builder.html">Custom Bouquet</a>
+                    <a href="account.html">My Account</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="#">FAQs</a>
+                    <a href="#">Delivery Info</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Pinterest</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BloomCart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/auth.js"></script>
+    
+    <script>
+        // Load featured products on homepage
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadFeaturedProducts();
+            updateCartBadge();
+            initMobileMenu();
+            
+            // Category click handlers
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const category = card.dataset.category;
+                    window.location.href = `shop.html?category=${encodeURIComponent(category)}`;
+                });
+            });
+            
+            // Newsletter form
+            document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = e.target.querySelector('input[type="email"]').value;
+                showToast('Subscribed successfully!', 'success');
+                e.target.reset();
+            });
+        });
+        
+        function initMobileMenu() {
+            const btn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            btn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                btn.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>
