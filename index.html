@@ -2,42 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="BloomCart - Fresh flowers delivered with love">
-    <title>BloomCart - Fresh Flowers Delivered</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloomCart - Artisanal Flowers, Hand-arranged with Intention</title>
+    <meta name="description" content="Hand-arranged bouquets, botanical installations, and weekly subscriptions - grown with intention and gathered with care.">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <a href="index.html">🌿 BloomCart</a>
+                <a href="index.html">BloomCart</a>
             </div>
-            
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-                <span></span><span></span><span></span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
             </button>
-            
             <div class="nav-links" id="navLinks">
-                <a href="index.html" class="active">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="builder.html">Build Bouquet</a>
-                <a href="account.html">My Account</a>
+                <a href="index.html" class="active">Shop</a>
+                <a href="shop.html">Seasonal</a>
+                <a href="#">Our Story</a>
+                <a href="#">Visit</a>
+                <a href="account.html">Journal</a>
             </div>
-            
             <div class="nav-icons">
-                <button class="icon-btn" id="searchBtn" aria-label="Search">
+                <button class="icon-btn" id="searchBtn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                 </button>
-                <button class="icon-btn cart-icon" id="cartBtn" aria-label="Cart">
+                <button class="icon-btn cart-icon" id="cartBtn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="9" cy="21" r="1"></circle>
                         <circle cx="20" cy="21" r="1"></circle>
@@ -45,7 +46,7 @@
                     </svg>
                     <span class="cart-badge" id="cartBadge">0</span>
                 </button>
-                <a href="login.html" class="icon-btn" id="userBtn">
+                <a href="login.html" class="icon-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                         <circle cx="12" cy="7" r="4"></circle>
@@ -57,93 +58,108 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Fresh Flowers <br>Delivered With Love</h1>
-            <p class="hero-subtitle">Same-day delivery available. Order by 2 PM for fresh blooms today.</p>
-            <div class="hero-buttons">
-                <a href="shop.html" class="btn btn-primary btn-large">Shop Now →</a>
-                <a href="builder.html" class="btn btn-outline btn-large">Build Your Own</a>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-badge">EST. 2024 · PORTLAND, OREGON</span>
+                    <h1 class="hero-title">
+                        Flowers that <br>
+                        <em>feel something</em>
+                    </h1>
+                    <p class="hero-description">
+                        Hand-arranged bouquets, botanical installations, and weekly subscriptions — 
+                        grown with intention and gathered with care.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="shop.html" class="btn btn-primary">Explore Arrangements →</a>
+                        <a href="builder.html" class="btn btn-secondary">Build Your Own</a>
+                    </div>
+                    <p class="hero-note">Same-day delivery available. Order by 2 PM.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&h=900&fit=crop" alt="Beautiful hand-arranged bouquet">
+                </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&h=600&fit=crop" alt="Beautiful flower arrangement">
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Weekly Pick Section -->
+    <section class="weekly-pick">
+        <div class="container">
+            <div class="weekly-card">
+                <div class="weekly-image">
+                    <img src="https://images.unsplash.com/photo-1587301563926-b5c5d7a75f2b?w=600&h=700&fit=crop" alt="Summer Atelier Box">
+                    <span class="weekly-badge">THIS WEEK'S PICK</span>
+                </div>
+                <div class="weekly-content">
+                    <span class="weekly-tag">Summer Atelier Box</span>
+                    <h2 class="weekly-title">Lisianthus, garden roses & trailing jasmine</h2>
+                    <p class="weekly-description">
+                        Curated for the season — a thoughtful arrangement of the week's freshest blooms, 
+                        hand-selected by our lead florist. Each box tells a story of the Pacific Northwest.
+                    </p>
+                    <div class="weekly-price">$78</div>
+                    <a href="product.html?id=summer-box" class="weekly-link">Add to order →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Ethos -->
     <section class="features">
         <div class="container">
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🚚</div>
-                    <h3>Free Delivery</h3>
-                    <p>On orders over $50</p>
+                    <div class="feature-icon">🌱</div>
+                    <h4>Grown with Intention</h4>
+                    <p>Sustainably sourced from local farms</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">💐</div>
-                    <h3>Fresh Guarantee</h3>
-                    <p>7-day freshness promise</p>
+                    <div class="feature-icon">🤲</div>
+                    <h4>Hand-Arranged</h4>
+                    <p>Each bouquet crafted by expert florists</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎁</div>
-                    <h3>Gift Ready</h3>
-                    <p>Free personalized card</p>
+                    <div class="feature-icon">📦</div>
+                    <h4>Weekly Subscriptions</h4>
+                    <p>Fresh blooms delivered to your door</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">⭐</div>
-                    <h3>4.9 Star Rating</h3>
-                    <p>From 10k+ customers</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="section-title">Shop by Occasion</h2>
-            <div class="categories-grid">
-                <div class="category-card" data-category="Birthday">
-                    <img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=300&h=300&fit=crop" alt="Birthday flowers">
-                    <h3>Birthday</h3>
-                </div>
-                <div class="category-card" data-category="Anniversary">
-                    <img src="https://images.unsplash.com/photo-1587301563926-b5c5d7a75f2b?w=300&h=300&fit=crop" alt="Anniversary flowers">
-                    <h3>Anniversary</h3>
-                </div>
-                <div class="category-card" data-category="Sympathy">
-                    <img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=300&h=300&fit=crop" alt="Sympathy flowers">
-                    <h3>Sympathy</h3>
-                </div>
-                <div class="category-card" data-category="Wedding">
-                    <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=300&h=300&fit=crop" alt="Wedding flowers">
-                    <h3>Wedding</h3>
+                    <div class="feature-icon">💚</div>
+                    <h4>Carbon Neutral</h4>
+                    <p>Committed to sustainable practices</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Featured Products -->
-    <section class="featured-products">
+    <section class="products-section">
         <div class="container">
-            <h2 class="section-title">Featured Arrangements</h2>
+            <h2 class="section-title">Seasonal Selections</h2>
+            <p class="section-subtitle">Curated just for you, from our studio to your home</p>
             <div class="products-grid" id="featuredProductsGrid">
-                <!-- Products will be loaded by JavaScript -->
                 <div class="loading-spinner"></div>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-12);">
+                <a href="shop.html" class="btn btn-outline">View All Arrangements →</a>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter">
+    <!-- Visit the Studio CTA -->
+    <section class="cta-section">
         <div class="container">
-            <div class="newsletter-content">
-                <h2>Get 15% Off Your First Order</h2>
-                <p>Subscribe to receive flower care tips, special offers, and seasonal inspiration.</p>
-                <form id="newsletterForm" class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
+            <h2 style="font-size: 48px;">Visit the Studio</h2>
+            <p style="font-size: var(--text-lg); color: var(--gray-600); margin-bottom: var(--space-4);">
+                2140 NE Alberta St, Portland, Oregon
+            </p>
+            <p style="color: var(--gray-500); margin-bottom: var(--space-8);">
+                Open Tuesday - Saturday · 10 AM - 6 PM
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Book an Appointment</a>
+                <a href="#" class="btn btn-secondary">Explore Installations</a>
             </div>
         </div>
     </section>
@@ -153,75 +169,106 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>🌿 BloomCart</h3>
-                    <p>Bringing nature's beauty to your doorstep since 2024.</p>
+                    <h3>BloomCart</h3>
+                    <p>Hand-arranged bouquets with intention, delivered with care.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h4>Explore</h4>
                     <a href="shop.html">Shop</a>
-                    <a href="builder.html">Custom Bouquet</a>
-                    <a href="account.html">My Account</a>
+                    <a href="builder.html">Build Your Own</a>
+                    <a href="#">Subscriptions</a>
+                    <a href="#">Corporate Gifting</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Support</h4>
-                    <a href="#">FAQs</a>
-                    <a href="#">Delivery Info</a>
-                    <a href="#">Contact Us</a>
+                    <h4>Visit</h4>
+                    <a href="#">Our Studio</a>
+                    <a href="#">Workshops</a>
+                    <a href="#">Private Events</a>
+                    <a href="#">Contact</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#">Instagram</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">Pinterest</a>
-                    </div>
+                    <h4>Connect</h4>
+                    <a href="#">Instagram</a>
+                    <a href="#">Pinterest</a>
+                    <a href="#">Newsletter</a>
+                    <a href="#">FAQ</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 BloomCart. All rights reserved.</p>
+                <p>&copy; 2026 BloomCart. All rights reserved. Designed with intention.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
 
     <script src="js/utils.js"></script>
     <script src="js/api.js"></script>
     <script src="js/cart.js"></script>
-    <script src="js/products.js"></script>
-    <script src="js/auth.js"></script>
     
     <script>
-        // Load featured products on homepage
         document.addEventListener('DOMContentLoaded', async () => {
             await loadFeaturedProducts();
             updateCartBadge();
             initMobileMenu();
             
-            // Category click handlers
-            document.querySelectorAll('.category-card').forEach(card => {
-                card.addEventListener('click', () => {
-                    const category = card.dataset.category;
-                    window.location.href = `shop.html?category=${encodeURIComponent(category)}`;
-                });
-            });
-            
-            // Newsletter form
-            document.getElementById('newsletterForm').addEventListener('submit', (e) => {
-                e.preventDefault();
-                const email = e.target.querySelector('input[type="email"]').value;
-                showToast('Subscribed successfully!', 'success');
-                e.target.reset();
+            document.getElementById('cartBtn').addEventListener('click', () => {
+                window.location.href = 'cart.html';
             });
         });
+        
+        async function loadFeaturedProducts() {
+            try {
+                const products = await fetchProducts({ limit: 4 });
+                const grid = document.getElementById('featuredProductsGrid');
+                
+                if (products.products && products.products.length) {
+                    grid.innerHTML = products.products.map(product => `
+                        <div class="product-card" onclick="window.location.href='product.html?id=${product.id}'">
+                            <img src="${product.image_url}" alt="${product.name}" class="product-image">
+                            <h3 class="product-title">${product.name}</h3>
+                            <p class="product-description">${product.flower_type || 'Fresh flowers'}</p>
+                            <div class="product-price">$${product.price}</div>
+                        </div>
+                    `).join('');
+                } else {
+                    grid.innerHTML = `
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1548092372-0d1bd40894a3?w=400&h=400&fit=crop" class="product-image">
+                            <h3 class="product-title">Eternal Love Roses</h3>
+                            <p class="product-description">24 red roses</p>
+                            <div class="product-price">$45.99</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1582794543136-8e9b5e6e8a9e?w=400&h=400&fit=crop" class="product-image">
+                            <h3 class="product-title">Sunshine Daisies</h3>
+                            <p class="product-description">Bright & cheerful</p>
+                            <div class="product-price">$32.99</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&h=400&fit=crop" class="product-image">
+                            <h3 class="product-title">Elegant White Lilies</h3>
+                            <p class="product-description">Peaceful & serene</p>
+                            <div class="product-price">$54.99</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=400&h=400&fit=crop" class="product-image">
+                            <h3 class="product-title">Romantic Peonies</h3>
+                            <p class="product-description">Lush & luxurious</p>
+                            <div class="product-price">$67.99</div>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Failed to load products:', error);
+            }
+        }
         
         function initMobileMenu() {
             const btn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
             btn.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
-                btn.classList.toggle('active');
             });
         }
     </script>

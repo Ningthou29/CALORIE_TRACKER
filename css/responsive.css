@@ -1,9 +1,154 @@
 /* ============================================
-   RESPONSIVE DESIGN (Complete)
+   RESPONSIVE CSS - BloomCart
+   Mobile-First Responsive Design
+   Breakpoints: 375px, 768px, 1024px, 1280px, 1440px
    ============================================ */
 
-/* Mobile (up to 768px) */
-@media (max-width: 768px) {
+/* ============================================
+   1. MOBILE (up to 375px) - Default
+   ============================================ */
+@media (max-width: 375px) {
+    /* Container */
+    .container {
+        padding: 0 var(--space-4);
+    }
+    
+    /* Typography */
+    h1, .hero-title {
+        font-size: 32px;
+    }
+    
+    h2, .section-title {
+        font-size: 28px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: var(--space-2) var(--space-5);
+        font-size: var(--text-xs);
+    }
+    
+    .btn-large {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--text-sm);
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: var(--space-16) 0 var(--space-8);
+        min-height: auto;
+    }
+    
+    .hero-badge {
+        font-size: 10px;
+    }
+    
+    .hero-description {
+        font-size: var(--text-base);
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    /* Weekly Pick */
+    .weekly-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .weekly-content {
+        padding: var(--space-6);
+    }
+    
+    .weekly-title {
+        font-size: 24px;
+    }
+    
+    .weekly-price {
+        font-size: var(--text-xl);
+    }
+    
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-8);
+    }
+    
+    /* Toast */
+    .toast {
+        left: var(--space-4);
+        right: var(--space-4);
+        bottom: var(--space-4);
+        text-align: center;
+        transform: translateY(100px);
+    }
+    
+    .toast.show {
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   2. SMALL MOBILE (376px - 480px)
+   ============================================ */
+@media (min-width: 376px) and (max-width: 480px) {
+    .container {
+        padding: 0 var(--space-4);
+    }
+    
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .weekly-content {
+        padding: var(--space-6);
+    }
+}
+
+/* ============================================
+   3. TABLET (481px - 768px)
+   ============================================ */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-6);
+    }
+    
+    /* Navigation */
     .mobile-menu-btn {
         display: block;
     }
@@ -14,11 +159,12 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: white;
+        background: var(--white);
         flex-direction: column;
-        padding: var(--spacing-4);
-        box-shadow: var(--shadow-md);
-        gap: var(--spacing-3);
+        padding: var(--space-6);
+        gap: var(--space-4);
+        box-shadow: var(--shadow-lg);
+        border-bottom: 1px solid var(--gray-100);
         z-index: 999;
     }
     
@@ -26,127 +172,615 @@
         display: flex;
     }
     
-    .hero {
-        flex-direction: column;
+    .nav-links a {
+        padding: var(--space-2) 0;
+        width: 100%;
         text-align: center;
-        padding: var(--spacing-8) var(--spacing-4);
+    }
+    
+    /* Hero */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
     }
     
     .hero-title {
-        font-size: 36px;
+        font-size: 42px;
     }
     
     .hero-buttons {
         justify-content: center;
+    }
+    
+    .hero-note {
+        text-align: center;
+    }
+    
+    /* Features */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+    }
+    
+    /* Weekly Pick */
+    .weekly-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .weekly-image {
+        min-height: 300px;
+    }
+    
+    .weekly-image img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    
+    /* Products */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+    }
+    
+    /* CTA Section */
+    .cta-section h2 {
+        font-size: 36px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Shop Layout */
+    .shop-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-sidebar {
+        position: static;
+        margin-bottom: var(--space-6);
+    }
+    
+    .shop-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* Product Detail */
+    .product-detail {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    .product-gallery {
+        position: static;
+    }
+    
+    .product-info h1 {
+        font-size: 32px;
+    }
+    
+    .product-actions {
         flex-direction: column;
     }
     
-    .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: var(--spacing-4);
+    /* Cart */
+    .cart-layout {
+        grid-template-columns: 1fr;
     }
     
-    .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .cart-header {
+        display: none;
+    }
+    
+    .cart-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-3);
+    }
+    
+    .cart-item-product {
+        flex-direction: column;
+    }
+    
+    .cart-item-quantity {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .cart-summary {
+        position: static;
+    }
+    
+    /* Checkout */
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .checkout-stepper {
+        margin-bottom: var(--space-8);
+    }
+    
+    .step-label {
+        font-size: 10px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+    
+    .payment-methods {
+        flex-direction: column;
+    }
+    
+    /* Account */
+    .account-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .account-sidebar {
+        position: static;
+        text-align: center;
+    }
+    
+    .account-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        margin: var(--space-4);
+        padding: var(--space-4);
+    }
+}
+
+/* ============================================
+   4. SMALL DESKTOP (769px - 1024px)
+   ============================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 0 var(--space-6);
+    }
+    
+    /* Navigation - Keep desktop style */
+    .mobile-menu-btn {
+        display: none;
+    }
+    
+    .nav-links {
+        display: flex;
+    }
+    
+    /* Hero */
+    .hero-title {
+        font-size: 48px;
+    }
+    
+    /* Features */
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Products */
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Shop Layout */
+    .shop-layout {
+        grid-template-columns: 260px 1fr;
+        gap: var(--space-6);
+    }
+    
+    /* Product Detail */
+    .product-detail {
+        gap: var(--space-8);
+    }
+    
+    .product-info h1 {
+        font-size: 36px;
+    }
+    
+    /* Cart */
+    .cart-layout {
+        grid-template-columns: 1fr 320px;
+        gap: var(--space-6);
+    }
+    
+    /* Checkout */
+    .checkout-layout {
+        grid-template-columns: 1fr 320px;
+        gap: var(--space-6);
+    }
+    
+    /* Account */
+    .account-layout {
+        grid-template-columns: 260px 1fr;
+        gap: var(--space-6);
+    }
+}
+
+/* ============================================
+   5. DESKTOP (1025px - 1280px)
+   ============================================ */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .container {
+        max-width: 1100px;
+        padding: 0 var(--space-6);
+    }
+    
+    /* Navigation */
+    .mobile-menu-btn {
+        display: none;
+    }
+    
+    .nav-links {
+        display: flex;
+    }
+    
+    /* Hero */
+    .hero-title {
+        font-size: 56px;
+    }
+    
+    /* Products */
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-6);
+    }
+    
+    /* Shop Layout */
+    .shop-layout {
+        grid-template-columns: 280px 1fr;
+        gap: var(--space-8);
+    }
+}
+
+/* ============================================
+   6. LARGE DESKTOP (1281px - 1440px)
+   ============================================ */
+@media (min-width: 1281px) and (max-width: 1440px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    .hero-title {
+        font-size: 64px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ============================================
+   7. EXTRA LARGE DESKTOP (1441px+)
+   ============================================ */
+@media (min-width: 1441px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero-title {
+        font-size: 80px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ============================================
+   8. LANDSCAPE MODE (Mobile Landscape)
+   ============================================ */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: var(--space-12) 0;
+    }
+    
+    .hero-grid {
+        gap: var(--space-6);
+    }
+    
+    .hero-title {
+        font-size: 32px;
     }
     
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .newsletter-form {
-        flex-direction: column;
-    }
-    
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .cart-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .cart-item__image {
-        margin: 0 auto;
-    }
-    
-    .checkout-stepper {
-        flex-direction: column;
-        gap: var(--spacing-4);
-    }
-    
-    .checkout-stepper::before {
-        display: none;
-    }
-    
-    .step {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-3);
-    }
-    
-    .step-number {
-        margin: 0;
-    }
-}
-
-/* Tablet (768px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .hero-title {
-        font-size: 44px;
-    }
-    
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    .container {
-        padding: 0 var(--spacing-4);
+}
+
+/* ============================================
+   9. HIGH DPI SCREENS (Retina)
+   ============================================ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .product-image,
+    .hero-image img,
+    .weekly-image img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
     }
 }
 
-/* Desktop (1025px and above) */
-@media (min-width: 1025px) {
-    .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .hero {
-        padding: var(--spacing-16) var(--spacing-6);
-    }
-}
-
-/* Large Desktop (1440px and above) */
-@media (min-width: 1440px) {
-    .products-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    
-    .container {
-        max-width: 1280px;
+/* ============================================
+   10. DARK MODE SUPPORT (Optional)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+    /* This is optional - add if you want dark mode support */
+    :root {
+        --off-white: #1a1a1a;
+        --gray-50: #1a1a1a;
+        --gray-100: #2a2a2a;
+        --gray-200: #3a3a3a;
+        --white: #1a1a1a;
     }
 }
 
-/* Print Styles */
+/* ============================================
+   11. PRINT STYLES
+   ============================================ */
 @media print {
     .navbar,
     .footer,
     .newsletter,
     .hero-buttons,
-    .cart-item__remove,
-    .checkout-stepper {
+    .cart-item-remove,
+    .checkout-stepper,
+    .btn,
+    .icon-btn,
+    .mobile-menu-btn {
         display: none;
     }
     
     body {
         background: white;
         color: black;
+        font-size: 12pt;
     }
     
     .container {
         max-width: 100%;
         padding: 0;
+        margin: 0;
+    }
+    
+    .product-detail,
+    .cart-layout,
+    .checkout-layout {
+        display: block;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .order-summary {
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+}
+
+/* ============================================
+   12. REDUCED MOTION (Accessibility)
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .product-card:hover,
+    .btn:hover {
+        transform: none;
+    }
+}
+
+/* ============================================
+   13. UTILITY RESPONSIVE CLASSES
+   ============================================ */
+/* Hide on mobile */
+.hide-mobile {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none;
+    }
+}
+
+/* Hide on desktop */
+.hide-desktop {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hide-desktop {
+        display: block;
+    }
+}
+
+/* Responsive Text Alignment */
+@media (max-width: 768px) {
+    .text-center-mobile {
+        text-align: center;
+    }
+    
+    .text-left-mobile {
+        text-align: left;
+    }
+    
+    .text-right-mobile {
+        text-align: right;
+    }
+}
+
+/* Responsive Flex Directions */
+@media (max-width: 768px) {
+    .flex-column-mobile {
+        flex-direction: column;
+    }
+    
+    .flex-wrap-mobile {
+        flex-wrap: wrap;
+    }
+}
+
+/* Responsive Grid Gaps */
+@media (max-width: 768px) {
+    .gap-sm-mobile {
+        gap: var(--space-4);
+    }
+    
+    .gap-md-mobile {
+        gap: var(--space-6);
+    }
+}
+
+/* ============================================
+   14. SAFE AREA INSETS (Notch phones)
+   ============================================ */
+@supports (padding: max(0px)) {
+    .navbar {
+        padding-left: max(var(--space-6), env(safe-area-inset-left));
+        padding-right: max(var(--space-6), env(safe-area-inset-right));
+    }
+    
+    .hero,
+    .features,
+    .products-section,
+    .footer {
+        padding-left: max(var(--space-6), env(safe-area-inset-left));
+        padding-right: max(var(--space-6), env(safe-area-inset-right));
+    }
+}
+
+/* ============================================
+   15. SCROLLBAR STYLING (Optional)
+   ============================================ */
+@media (min-width: 1024px) {
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: var(--gray-100);
+        border-radius: var(--radius-full);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: var(--gray-300);
+        border-radius: var(--radius-full);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--gray-400);
+    }
+}
+
+/* ============================================
+   16. FOCUS VISIBLE (Accessibility)
+   ============================================ */
+:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* ============================================
+   17. TOUCH TARGET SIZES (Mobile)
+   ============================================ */
+@media (max-width: 768px) {
+    button,
+    .btn,
+    .icon-btn,
+    .filter-option,
+    .page-btn,
+    .cart-item-remove {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .filter-option {
+        padding: var(--space-2) 0;
+    }
+    
+    input,
+    select,
+    textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* ============================================
+   18. CONTAINER QUERIES (Modern)
+   ============================================ */
+@container (max-width: 600px) {
+    .product-card {
+        display: flex;
+        gap: var(--space-4);
+    }
+    
+    .product-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* ============================================
+   19. PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+@media (max-width: 768px) {
+    /* Reduce animations on mobile */
+    .product-card:hover {
+        transform: none;
+    }
+    
+    /* Optimize images */
+    img {
+        content-visibility: auto;
+    }
+    
+    /* Lazy load below the fold */
+    .products-section,
+    .weekly-pick {
+        content-visibility: auto;
+        contain-intrinsic-size: 500px;
+    }
+}
+
+/* ============================================
+   20. BROWSER-SPECIFIC FIXES
+   ============================================ */
+/* Safari specific */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Firefox specific */
+@-moz-document url-prefix() {
+    .filter-sidebar {
+        scrollbar-width: thin;
     }
 }
