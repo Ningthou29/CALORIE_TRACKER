@@ -6,7 +6,6 @@
     <title>BloomCart - Artisanal Flowers, Hand-arranged with Intention</title>
     <meta name="description" content="Hand-arranged bouquets, botanical installations, and weekly subscriptions - grown with intention and gathered with care.">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/components.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -56,29 +55,24 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - No side image, just centered content -->
     <section class="hero">
         <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <span class="hero-badge">EST. 2024 · PORTLAND, OREGON</span>
-                    <h1 class="hero-title">
-                        Flowers that <br>
-                        <em>feel something</em>
-                    </h1>
-                    <p class="hero-description">
-                        Hand-arranged bouquets, botanical installations, and weekly subscriptions — 
-                        grown with intention and gathered with care.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="shop.html" class="btn btn-primary">Explore Arrangements →</a>
-                        <a href="builder.html" class="btn btn-secondary">Build Your Own</a>
-                    </div>
-                    <p class="hero-note">Same-day delivery available. Order by 2 PM.</p>
+            <div class="hero-content">
+                <span class="hero-badge">EST. 2024 · PORTLAND, OREGON</span>
+                <h1 class="hero-title">
+                    Flowers that <br>
+                    <em>feel something</em>
+                </h1>
+                <p class="hero-description">
+                    Hand-arranged bouquets, botanical installations, and weekly subscriptions — 
+                    grown with intention and gathered with care.
+                </p>
+                <div class="hero-buttons">
+                    <a href="shop.html" class="btn btn-primary">Explore Arrangements →</a>
+                    <a href="builder.html" class="btn btn-secondary">Build Your Own</a>
                 </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&h=900&fit=crop" alt="Beautiful hand-arranged bouquet">
-                </div>
+                <p class="hero-note">Same-day delivery available. Order by 2 PM.</p>
             </div>
         </div>
     </section>
@@ -139,7 +133,42 @@
             <h2 class="section-title">Seasonal Selections</h2>
             <p class="section-subtitle">Curated just for you, from our studio to your home</p>
             <div class="products-grid" id="featuredProductsGrid">
-                <div class="loading-spinner"></div>
+                <!-- Product 1 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=1'">
+                    <img src="https://images.unsplash.com/photo-1548092372-0d1bd40894a3?w=400&h=400&fit=crop" alt="Eternal Love Roses" class="product-image">
+                    <div class="product-card-content">
+                        <h3 class="product-title">Eternal Love Roses</h3>
+                        <p class="product-description">24 red roses</p>
+                        <div class="product-price">$45.99</div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=2'">
+                    <img src="https://images.unsplash.com/photo-1582794543136-8e9b5e6e8a9e?w=400&h=400&fit=crop" alt="Sunshine Daisies" class="product-image">
+                    <div class="product-card-content">
+                        <h3 class="product-title">Sunshine Daisies</h3>
+                        <p class="product-description">Bright & cheerful</p>
+                        <div class="product-price">$32.99</div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=3'">
+                    <img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&h=400&fit=crop" alt="Elegant White Lilies" class="product-image">
+                    <div class="product-card-content">
+                        <h3 class="product-title">Elegant White Lilies</h3>
+                        <p class="product-description">Peaceful & serene</p>
+                        <div class="product-price">$54.99</div>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=4'">
+                    <img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=400&h=400&fit=crop" alt="Romantic Peonies" class="product-image">
+                    <div class="product-card-content">
+                        <h3 class="product-title">Romantic Peonies</h3>
+                        <p class="product-description">Lush & luxurious</p>
+                        <div class="product-price">$67.99</div>
+                    </div>
+                </div>
             </div>
             <div style="text-align: center; margin-top: var(--space-12);">
                 <a href="shop.html" class="btn btn-outline">View All Arrangements →</a>
@@ -202,74 +231,43 @@
 
     <div id="toast" class="toast"></div>
 
-    <script src="js/utils.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/cart.js"></script>
-    
     <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            await loadFeaturedProducts();
-            updateCartBadge();
-            initMobileMenu();
-            
-            document.getElementById('cartBtn').addEventListener('click', () => {
-                window.location.href = 'cart.html';
-            });
-        });
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
         
-        async function loadFeaturedProducts() {
-            try {
-                const products = await fetchProducts({ limit: 4 });
-                const grid = document.getElementById('featuredProductsGrid');
-                
-                if (products.products && products.products.length) {
-                    grid.innerHTML = products.products.map(product => `
-                        <div class="product-card" onclick="window.location.href='product.html?id=${product.id}'">
-                            <img src="${product.image_url}" alt="${product.name}" class="product-image">
-                            <h3 class="product-title">${product.name}</h3>
-                            <p class="product-description">${product.flower_type || 'Fresh flowers'}</p>
-                            <div class="product-price">$${product.price}</div>
-                        </div>
-                    `).join('');
-                } else {
-                    grid.innerHTML = `
-                        <div class="product-card">
-                            <img src="https://images.unsplash.com/photo-1548092372-0d1bd40894a3?w=400&h=400&fit=crop" class="product-image">
-                            <h3 class="product-title">Eternal Love Roses</h3>
-                            <p class="product-description">24 red roses</p>
-                            <div class="product-price">$45.99</div>
-                        </div>
-                        <div class="product-card">
-                            <img src="https://images.unsplash.com/photo-1582794543136-8e9b5e6e8a9e?w=400&h=400&fit=crop" class="product-image">
-                            <h3 class="product-title">Sunshine Daisies</h3>
-                            <p class="product-description">Bright & cheerful</p>
-                            <div class="product-price">$32.99</div>
-                        </div>
-                        <div class="product-card">
-                            <img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&h=400&fit=crop" class="product-image">
-                            <h3 class="product-title">Elegant White Lilies</h3>
-                            <p class="product-description">Peaceful & serene</p>
-                            <div class="product-price">$54.99</div>
-                        </div>
-                        <div class="product-card">
-                            <img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=400&h=400&fit=crop" class="product-image">
-                            <h3 class="product-title">Romantic Peonies</h3>
-                            <p class="product-description">Lush & luxurious</p>
-                            <div class="product-price">$67.99</div>
-                        </div>
-                    `;
-                }
-            } catch (error) {
-                console.error('Failed to load products:', error);
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+        
+        // Cart badge (mock)
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('bloomCart_cart') || '[]');
+            const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            const badge = document.getElementById('cartBadge');
+            if (badge) {
+                badge.textContent = totalItems;
             }
         }
         
-        function initMobileMenu() {
-            const btn = document.getElementById('mobileMenuBtn');
-            const navLinks = document.getElementById('navLinks');
-            btn.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
+        updateCartBadge();
+        
+        // Cart button
+        document.getElementById('cartBtn')?.addEventListener('click', () => {
+            window.location.href = 'cart.html';
+        });
+        
+        // Show toast function
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
         }
     </script>
 </body>
